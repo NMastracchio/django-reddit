@@ -1,0 +1,9 @@
+{% if top_posts %}
+    <ul>
+    {% for post in top_posts %}
+        <li>{{ post.post_score }} - <a href="{% url 'reddit:post' post.id %}">{{ post.post_title }}</a> by {{ post.post_submitter }} ({{post.post_comment_count}} comments)</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
